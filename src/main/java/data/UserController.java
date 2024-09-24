@@ -58,7 +58,7 @@ public class UserController  extends SelectorComposer<Component> {
     public void showDetail(){
         Set<User> selection = dataModel.getSelection();
         User selected = selection.iterator().next();
-        idLabel.setValue(selected.getId().toString());
+        idLabel.setValue(selected.getId());
         usernameLabel.setValue(selected.getUsername());
         genderLabel.setValue(selected.getGender());
         birthdayLabel.setValue(selected.getBirthday());

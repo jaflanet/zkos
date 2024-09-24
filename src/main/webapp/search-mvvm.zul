@@ -1,0 +1,65 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="template.zul"?>
+<zk>
+    <window title="User List" border="normal" width="100%"
+            style="margin:0px auto;"
+            onOK="@command('search')"
+            viewModel="@id('vm') @init('data.SearchViewModel')"
+            self="@define(content)">
+        Search Username:
+        <textbox value="@save(vm.keyword)" />
+        <button label="Search"
+                onClick="@command('search')"
+                iconSclass="z-icon-search"
+                style="margin= 0 0 5px"/>
+        <listbox model="@init(vm.userList)" emptyMessage="No User Found"
+                 rows="5" selectedItem="@save(vm.selectedUser)">
+            <listhead>
+                <listheader label="id"/>
+                <listheader label="username"/>
+                <listheader label="gender"/>
+                <listheader label="birthday date"/>
+                <listheader label="status"/>
+                <listheader label="jumlah anak"/>
+            </listhead>
+            <template  name="model">
+                <listitem>
+                    <listcell label="@init(each.id)"/>
+                    <listcell label="@init(each.username)"/>
+                    <listcell label="@init(each.gender)"/>
+                    <listcell label="@init(each.birthday)"/>
+                    <listcell label="@init(each.status)"/>
+                    <listcell label="@init(each.anak)"/>
+                </listitem>
+            </template>
+        </listbox>
+        <hlayout>
+            <vlayout>
+                <hlayout>
+                    <label value="id :"/>
+                    <label value="@load(vm.selectedUser.id)"/>
+                </hlayout>
+                <hlayout>
+                    <label value="username :"/>
+                    <label value="@load(vm.selectedUser.username)"/>
+                </hlayout>
+                <hlayout>
+                    <label value="gender :"/>
+                    <label value="@load(vm.selectedUser.gender)"/>
+                </hlayout>
+                <hlayout>
+                    <label value="birhtday :"/>
+                    <label value="@load(vm.selectedUser.birthday)"/>
+                </hlayout>
+                <hlayout>
+                    <label value="status :"/>
+                    <label value="@load(vm.selectedUser.status)"/>
+                </hlayout>
+                <hlayout>
+                    <label value="jumlah anak :"/>
+                    <label value="@load(vm.selectedUser.anak)"/>
+                </hlayout>
+            </vlayout>
+
+        </hlayout>
+    </window>
+</zk>

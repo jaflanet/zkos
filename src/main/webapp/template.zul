@@ -67,22 +67,25 @@
             <label value="Ini Header" class="header-text"/>
         </north>
 
-        <west size="200px" border="none" flex="true" maxsize="250" splittable="true" collapsible="true" class="sidebar">
+        <west size="200px" border="none" flex="true" maxsize="250" class="sidebar">
 <div> <hlayout style="margin-bottom: 20px;">
     <label value="ini sidebar" class="bold"/>
 </hlayout>
     <hlayout>
         <button label="Registration" href="/hello.zul" class="button-style" style="font-size:18px;"/>
     </hlayout>
-    <hlayout>
-        <button label="Page 1" href="/index.zul"  class="button-style"/>
-    </hlayout>
+
     <hlayout>
         <button label="Search" href="/search.zul"  class="button-style"/>
     </hlayout>
     <hlayout>
-        <button label="Page 3" href="/page3.zul"  class="button-style"/>
-    </hlayout></div>
+        <button label="Regis MVVM" href="/regis-mvvm.zul"  class="button-style"/>
+    </hlayout>
+    <hlayout>
+        <button label="Search MVVM" href="/search-mvvm.zul"  class="button-style"/>
+    </hlayout>
+
+</div>
 
 
         </west>

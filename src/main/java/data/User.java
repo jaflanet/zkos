@@ -3,14 +3,14 @@ package data;
 import java.util.Date;
 
 public class User {
-    private Integer id;
+    private String id;
     private String username;
     private String gender;
     private String birthday;
     private String status;
     private Integer anak;
 
-    public User(Integer id, String username, String gender, String birthday, String status, Integer anak) {
+    public User(String id, String username, String gender, String birthday, String status, Integer anak) {
         this.id = id;
         this.username = username;
         this.gender = gender;
@@ -19,11 +19,11 @@ public class User {
         this.anak = anak;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

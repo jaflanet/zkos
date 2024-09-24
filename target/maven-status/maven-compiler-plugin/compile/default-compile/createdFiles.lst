@@ -1,4 +1,6 @@
+data\SearchViewModel.class
+data\UserServiceImpl.class
 data\User.class
+data\UserRepository.class
 data\UserService.class
 data\UserController.class
-data\UserServiceImpl.class
