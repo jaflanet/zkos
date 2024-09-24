@@ -12,9 +12,24 @@ public class UserServiceImpl implements UserService {
         return userList.findAll();
     }
 
+    @Override
+    public void deleteUser(String id) {
+        UserRepository.userList.removeIf(user -> user.getId().equals(id));
+    }
 
-
-
+    @Override
+    public void updateUser(User updatedUser) {
+        userList.findAll().stream()
+                .filter(user -> user.getId().equals(updatedUser.getId()))
+                .findFirst()
+                .ifPresent(existingUser -> {
+                    existingUser.setUsername(updatedUser.getUsername());
+                    existingUser.setGender(updatedUser.getGender());
+                    existingUser.setBirthday(updatedUser.getBirthday());
+                    existingUser.setStatus(updatedUser.getStatus());
+                    existingUser.setAnak(updatedUser.getAnak());
+                });
+    }
 
     public List<User> search(String keyword){
         List<User> result = new LinkedList<User>();
@@ -35,6 +50,8 @@ public class UserServiceImpl implements UserService {
         User newUser = new User(UUID.randomUUID().toString(), username, gender, birthday, status, anak);
         userList.addUser(newUser);
     }
+
+
 
 
 }

@@ -9,4 +9,8 @@ public interface UserService {
     public List<User> search(String keyword);
 
     void addUser(String username, String gender, String birthday, String status, Integer anak);
+
+    void deleteUser(String id);
+
+    void updateUser(User user);
 }

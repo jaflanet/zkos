@@ -14,9 +14,10 @@ public class SearchViewModel {
     private String birthday;
     private String status;
     private Integer anak;
-    private List<User> userList = new ListModelList<>();
-    private User selectedUser;
     private UserService userService = new UserServiceImpl();
+    private List<User> userList = new ListModelList<>(userService.findAll());
+    private User selectedUser;
+
 
 
     @Command
@@ -35,12 +36,32 @@ public class SearchViewModel {
     }
 
     @Command
+    @NotifyChange("userList")
     public void delete() {
-        if (selectedUser == null) throw new RuntimeException("Please select user before delete");
+        if (selectedUser == null) throw new RuntimeException("Please select a user before delete");
+
+        userService.deleteUser(selectedUser.getId());
+        userList.remove(selectedUser);
+        selectedUser = null;
+
         System.out.println("--------------------");
         System.out.println("Id: " + selectedUser.getId());
         System.out.println("Username: " + selectedUser.getUsername());
         System.out.println("Gender: " + selectedUser.getGender());
+        System.out.println("--------------------");
+    }
+
+    @Command
+    @NotifyChange({"userList", "selectedUser"})
+    public void update() {
+        if (selectedUser == null) throw new RuntimeException("Please select a user before updating");
+
+        userService.updateUser(selectedUser);
+        search();
+
+        System.out.println("--------------------");
+        System.out.println("Updated User Id: " + selectedUser.getId());
+        System.out.println("Username: " + selectedUser.getUsername());
         System.out.println("--------------------");
     }
 

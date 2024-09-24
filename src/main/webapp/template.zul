@@ -90,7 +90,7 @@
 
         </west>
 
-        <center>
+        <center autoscroll="true" style="padding : 0">
             <window width="100%" border="none" class="center-content" self="@insert(content)">
             </window>
         </center>
