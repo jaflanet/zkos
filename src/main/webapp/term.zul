@@ -1,0 +1,27 @@
+<zk>
+    <window title="Terms and Conditions" border="normal" width="800px" height="600px">
+        <vbox spacing="10px" padding="10px">
+            <label value="Terms and Conditions" style="font-size: 28px; font-weight: bold;"/>
+            <label value="Please read these terms and conditions carefully before using our service." />
+            <separator />
+
+            <label value="1. Acceptance of Terms" />
+            <label value="By accessing or using the service, you agree to be bound by these terms." />
+
+            <label value="2. Changes to Terms" />
+            <label value="We reserve the right to modify these terms at any time." />
+
+            <label value="3. User Responsibilities" />
+            <label value="Users are responsible for maintaining the confidentiality of their account." />
+
+            <label value="4. Limitation of Liability" />
+            <label value="We are not liable for any damages resulting from the use of our service." />
+
+            <label value="5. Governing Law" />
+            <label value="These terms shall be governed by the laws of [Your Country]." />
+
+            <separator />
+            <label value="Last updated: [Date]" style="font-style: italic;"/>
+        </vbox>
+    </window>
+</zk>
