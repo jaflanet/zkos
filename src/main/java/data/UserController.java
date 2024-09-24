@@ -36,10 +36,10 @@ public class UserController  extends SelectorComposer<Component> {
 
     @Wire
     private Label anakLabel;
-
-    private ListModelList<User> dataModel = new ListModelList<>();
-
     private UserService userService = new UserServiceImpl();
+    private ListModelList<User> dataModel = new ListModelList<>(userService.findAll());
+
+
 
     @Override
     public void doAfterCompose(Component comp) throws Exception{

@@ -78,7 +78,7 @@
         <button label="Page 1" href="/index.zul"  class="button-style"/>
     </hlayout>
     <hlayout>
-        <button label="Search" href="/list.zul"  class="button-style"/>
+        <button label="Search" href="/search.zul"  class="button-style"/>
     </hlayout>
     <hlayout>
         <button label="Page 3" href="/page3.zul"  class="button-style"/>

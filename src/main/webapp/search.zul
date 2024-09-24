@@ -1,0 +1,52 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="template.zul"?>
+<zk>
+    <window title="User List" border="normal" width="100%" style="margin:0px auto;" apply="data.UserController" self="@define(content)">
+       keyword:
+        <textbox id="keywordBox"/>
+        <button id="searchButton" label="Search" iconSclass="z-icon-search" style="margin= 0 0 5px"/>
+        <listbox id="userListBox" emptyMessage="No User Found" rows="5">
+            <listhead>
+                <listheader label="id"/>
+                <listheader label="username"/>
+                <listheader label="gender"/>
+
+            </listhead>
+            <template  name="model">
+                <listitem>
+                    <listcell label="${each.id}"/>
+                    <listcell label="${each.username}"/>
+                    <listcell label="${each.gender}"/>
+                </listitem>
+            </template>
+        </listbox>
+        <hlayout>
+            <vlayout>
+                <hlayout>
+                    <label value="id :"/>
+                    <label id="idLabel"/>
+                </hlayout>
+                <hlayout>
+                    <label value="username :"/>
+                    <label id="usernameLabel"/>
+                </hlayout>
+                <hlayout>
+                    <label value="gender :"/>
+                    <label id="genderLabel"/>
+                </hlayout>
+                <hlayout>
+                    <label value="birhtday :"/>
+                    <label id="birthdayLabel"/>
+                </hlayout>
+                <hlayout>
+                    <label value="status :"/>
+                    <label id="statusLabel"/>
+                </hlayout>
+                <hlayout>
+                    <label value="jumlah anak :"/>
+                    <label id="anakLabel"/>
+                </hlayout>
+                </vlayout>
+
+        </hlayout>
+    </window>
+</zk>
