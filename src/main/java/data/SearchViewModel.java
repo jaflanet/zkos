@@ -34,7 +34,6 @@ public class SearchViewModel {
         userService.addUser(username, gender, birthday, status, anak);
         System.out.println(username);
         System.out.println(userService);
-        search();
         Executions.sendRedirect("search-mvvm.zul");
     }
 
