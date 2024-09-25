@@ -32,7 +32,7 @@
             </zscript>
             <grid>
                 <auxhead>
-                    <auxheader label="Registration Form" iconSclass="z-icon-user-circle-o" colspan="2" style="background-color: #00e7da;color:black;"/>
+                    <auxheader label="Registration Form" iconSclass="z-icon-user-circle-o" colspan="2" style="background-color: #161b33;"/>
                 </auxhead>
                 <columns style="background-color: #00e7da;">
                     <column/>
@@ -77,7 +77,7 @@
                     <row>
                         <label value="Help (Ctrl + H)" popup="help, position=end_after"/>
                         <div>
-                            <button label="Reset" id="resetButton" onClick="resetForm()" style="background-color: #00e7da;"/>
+                            <button label="Reset" id="resetButton" onClick="resetForm()" style="background-color: #161b33;"/>
                             <button label="Submit" id="submitButton" onClick="@command('addNew')" disabled="true"/>
                         </div>
                     </row>

@@ -1,14 +1,15 @@
 <zk>
     <style>
         .header {
-        background-color: #00e7da;
+        background-color: #161b33;
         color: white;
         text-align: center;
         padding-top:20px;
         }
 
         .footer{
-        background-color: #00e7da;
+        background-color: #161b33;
+        color:#ffffff;
         text-align: center;
         }
 
@@ -16,6 +17,7 @@
         font-size: 24px;
         font-weight: 700;
         margin-top: 10px;
+        color:#ffffff;
         }
 
         .sidebar {
@@ -42,7 +44,7 @@
 
         .button-style {
         background-color: transparent;
-        color: #00e7da;
+        color: #161b33;
         border: none;
         padding: 10px 15px;
         text-align: left;
@@ -52,8 +54,8 @@
 
 
         .button-style:hover {
-        background-color: rgba(0, 231, 218, 0.2);
-        color:black;
+        background-color: #161b33;;
+        color:white;
         }
 
         hlayout {
@@ -96,7 +98,7 @@
         </center>
 
         <south size="50px" border="none" class="footer">
-            <label value="ini footer"/>
+            <label value="ini footer" style="color:#ffffff"/>
         </south>
     </borderlayout>
 </zk>

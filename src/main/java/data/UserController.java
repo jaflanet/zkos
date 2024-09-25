@@ -61,7 +61,7 @@ public class UserController  extends SelectorComposer<Component> {
         idLabel.setValue(selected.getId());
         usernameLabel.setValue(selected.getUsername());
         genderLabel.setValue(selected.getGender());
-        birthdayLabel.setValue(selected.getBirthday());
+        birthdayLabel.setValue(selected.getBirthday().toString());
         statusLabel.setValue(selected.getStatus());
         anakLabel.setValue(selected.getAnak().toString());
     }

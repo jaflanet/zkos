@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
         return result;
     }
 
-    public void addUser(String username, String gender, String birthday, String status, Integer anak) {
+    public void addUser(String username, String gender, Date birthday, String status, Integer anak) {
         User newUser = new User(UUID.randomUUID().toString(), username, gender, birthday, status, anak);
         userList.addUser(newUser);
     }

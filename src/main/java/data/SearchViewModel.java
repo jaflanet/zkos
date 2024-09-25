@@ -2,8 +2,10 @@ package data;
 
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.NotifyChange;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zul.ListModelList;
 
+import java.util.Date;
 import java.util.List;
 
 public class SearchViewModel {
@@ -11,7 +13,7 @@ public class SearchViewModel {
     private String keyword;
     private String username;
     private String gender;
-    private String birthday;
+    private Date birthday;
     private String status;
     private Integer anak;
     private UserService userService = new UserServiceImpl();
@@ -33,6 +35,7 @@ public class SearchViewModel {
         System.out.println(username);
         System.out.println(userService);
         search();
+        Executions.sendRedirect("search-mvvm.zul");
     }
 
     @Command
@@ -42,7 +45,7 @@ public class SearchViewModel {
 
         userService.deleteUser(selectedUser.getId());
         userList.remove(selectedUser);
-        selectedUser = null;
+        Executions.sendRedirect("search-mvvm.zul");
 
         System.out.println("--------------------");
         System.out.println("Id: " + selectedUser.getId());
@@ -57,7 +60,7 @@ public class SearchViewModel {
         if (selectedUser == null) throw new RuntimeException("Please select a user before updating");
 
         userService.updateUser(selectedUser);
-        search();
+        Executions.sendRedirect("search-mvvm.zul");
 
         System.out.println("--------------------");
         System.out.println("Updated User Id: " + selectedUser.getId());
@@ -81,11 +84,11 @@ public class SearchViewModel {
         this.gender = gender;
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 

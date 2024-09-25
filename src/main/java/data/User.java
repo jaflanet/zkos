@@ -6,11 +6,11 @@ public class User {
     private String id;
     private String username;
     private String gender;
-    private String birthday;
+    private Date birthday;
     private String status;
     private Integer anak;
 
-    public User(String id, String username, String gender, String birthday, String status, Integer anak) {
+    public User(String id, String username, String gender, Date birthday, String status, Integer anak) {
         this.id = id;
         this.username = username;
         this.gender = gender;
@@ -43,11 +43,11 @@ public class User {
         this.gender = gender;
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
