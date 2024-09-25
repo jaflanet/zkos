@@ -32,8 +32,6 @@ public class SearchViewModel {
     @NotifyChange("userList")
     public void addNew() {
         userService.addUser(username, gender, birthday, status, anak);
-        System.out.println(username);
-        System.out.println(userService);
         Executions.sendRedirect("search-mvvm.zul");
     }
 
@@ -45,26 +43,14 @@ public class SearchViewModel {
         userService.deleteUser(selectedUser.getId());
         userList.remove(selectedUser);
         Executions.sendRedirect("search-mvvm.zul");
-
-        System.out.println("--------------------");
-        System.out.println("Id: " + selectedUser.getId());
-        System.out.println("Username: " + selectedUser.getUsername());
-        System.out.println("Gender: " + selectedUser.getGender());
-        System.out.println("--------------------");
     }
 
     @Command
     @NotifyChange({"userList", "selectedUser"})
     public void update() {
         if (selectedUser == null) throw new RuntimeException("Please select a user before updating");
-
         userService.updateUser(selectedUser);
         Executions.sendRedirect("search-mvvm.zul");
-
-        System.out.println("--------------------");
-        System.out.println("Updated User Id: " + selectedUser.getId());
-        System.out.println("Username: " + selectedUser.getUsername());
-        System.out.println("--------------------");
     }
 
     public String getUsername() {
