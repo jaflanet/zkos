@@ -27,4 +27,5 @@ public class MyServiceImpl implements MyService {
 		dao.delete(log);
 	}
 
+
 }

@@ -1,6 +1,5 @@
 package com.fif.repository;
 
-import com.fif.entity.Log;
 import com.fif.entity.User;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,11 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.UUID;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
+
 
 @Repository
 public class UserRepository {
@@ -47,6 +44,14 @@ public class UserRepository {
             em.remove(u);
         }
     }
+
+    @Transactional(readOnly = true)
+    public List<User> searchByKeyword(String keyword) {
+        String searchQuery = "SELECT u FROM User u WHERE u.username LIKE :keyword";
+        Query query = em.createQuery(searchQuery);
+        query.setParameter("keyword", "%" + keyword + "%");
+        List<User> res = query.getResultList();
+        return res;}
 
     @Transactional
     public User update(User user){
