@@ -74,13 +74,6 @@
     <label value="ini sidebar" class="bold"/>
 </hlayout>
     <hlayout>
-        <button label="Registration" href="/hello.zul" class="button-style" style="font-size:18px;"/>
-    </hlayout>
-
-    <hlayout>
-        <button label="Search" href="/search.zul"  class="button-style"/>
-    </hlayout>
-    <hlayout>
         <button label="Regis MVVM" href="/regis-mvvm.zul"  class="button-style"/>
     </hlayout>
     <hlayout>

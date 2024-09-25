@@ -1,6 +1,10 @@
-data\SearchViewModel.class
-data\UserServiceImpl.class
-data\User.class
-data\UserRepository.class
-data\UserService.class
-data\UserController.class
+com\fif\controller\MyViewModel.class
+com\fif\entity\User.class
+com\fif\services\impl\LogDao.class
+com\fif\services\impl\UserServiceImpl.class
+com\fif\controller\SearchViewModel.class
+com\fif\repository\UserRepository.class
+com\fif\entity\Log.class
+com\fif\services\MyService.class
+com\fif\services\impl\MyServiceImpl.class
+com\fif\services\UserService.class

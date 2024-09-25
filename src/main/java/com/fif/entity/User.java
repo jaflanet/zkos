@@ -1,17 +1,36 @@
-package data;
+package com.fif.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
-    private String id;
-    private String username;
-    private String gender;
-    private Date birthday;
-    private String status;
-    private Integer anak;
+@Entity(name = "User")
+public class User implements Serializable, Cloneable {
+    private static final long serialVersionUID = 1L;
 
-    public User(String id, String username, String gender, Date birthday, String status, Integer anak) {
-        this.id = id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Integer id;
+
+    @Column(nullable = false)
+    String username;
+
+    @Column(nullable = false)
+    String gender;
+
+    @Column
+    Date birthday;
+
+    @Column(nullable = false)
+    String status;
+
+    @Column(nullable = false)
+    Integer anak;
+
+    public User() {
+    }
+
+    public User(String username, String gender, Date birthday, String status, Integer anak) {
         this.username = username;
         this.gender = gender;
         this.birthday = birthday;
@@ -19,11 +38,11 @@ public class User {
         this.anak = anak;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -3,7 +3,7 @@
     <window width="700px"
             style="margin:0px auto;"
             self="@define(content)"
-            viewModel="@id('vm') @init('data.SearchViewModel')">
+            viewModel="@id('vm') @init('com.fif.controller.SearchViewModel')">
 
         <label value="Welcome! New User"/>
         <window>
@@ -78,7 +78,7 @@
                         <label value="Help (Ctrl + H)" popup="help, position=end_after"/>
                         <div>
                             <button label="Reset" id="resetButton" onClick="resetForm()" style="background-color: #161b33;"/>
-                            <button label="Submit" id="submitButton" onClick="@command('addNew')" disabled="true"/>
+                            <button label="Submit" id="submitButton" onClick="@command('addUser')" disabled="true"/>
                         </div>
                     </row>
                 </rows>
