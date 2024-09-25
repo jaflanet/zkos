@@ -1,0 +1,104 @@
+<zk>
+    <style>
+        .header {
+        background-color: #161b33;
+        color: white;
+        text-align: center;
+        padding-top:20px;
+        }
+
+        .footer{
+        background-color: #161b33;
+        color:#ffffff;
+        text-align: center;
+        }
+
+        .header-text {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 10px;
+        color:#ffffff;
+        }
+
+        .sidebar {
+        background-color: #fffff;
+        padding: 15px;
+        border-right: 1px solid #ccc;
+        }
+
+        .center-content {
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        min-height: 300px;
+        }
+
+        .sidebar label {
+        display: block;
+        margin: 5px 0;
+        }
+
+        .bold {
+        font-weight: bold;
+        }
+
+        .button-style {
+        background-color: transparent;
+        color: #161b33;
+        border: none;
+        padding: 10px 15px;
+        text-align: left;
+        cursor: pointer;
+        width: 200px;
+        }
+
+
+        .button-style:hover {
+        background-color: #161b33;;
+        color:white;
+        }
+
+        hlayout {
+        margin-bottom: 10px;
+        }
+    </style>
+
+    <borderlayout>
+
+        <north size="100px" class="header">
+            <label value="Ini Header" class="header-text"/>
+        </north>
+
+        <west size="200px" border="none" flex="true" maxsize="250" class="sidebar">
+<div> <hlayout style="margin-bottom: 20px;">
+    <label value="ini sidebar" class="bold"/>
+</hlayout>
+    <hlayout>
+        <button label="Registration" href="/hello.zul" class="button-style" style="font-size:18px;"/>
+    </hlayout>
+
+    <hlayout>
+        <button label="Search" href="/search.zul"  class="button-style"/>
+    </hlayout>
+    <hlayout>
+        <button label="Regis MVVM" href="/regis-mvvm.zul"  class="button-style"/>
+    </hlayout>
+    <hlayout>
+        <button label="Search MVVM" href="/search-mvvm.zul"  class="button-style"/>
+    </hlayout>
+
+</div>
+
+
+        </west>
+
+        <center autoscroll="true" style="padding : 0">
+            <window width="100%" border="none" class="center-content" self="@insert(content)">
+            </window>
+        </center>
+
+        <south size="50px" border="none" class="footer">
+            <label value="ini footer" style="color:#ffffff"/>
+        </south>
+    </borderlayout>
+</zk>

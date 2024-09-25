@@ -1,0 +1,27 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="template.zul"?>
+<zk>
+    <window title="User List" border="normal" width="100%" style="margin:0px auto;" apply="data.UserController" self="@define(content)">
+        <listbox id="userListBox">
+            <listhead>
+                <listheader label="id"/>
+                <listheader label="username"/>
+                <listheader label="gender"/>
+                <listheader label="birthday date"/>
+                <listheader label="status"/>
+                <listheader label="jumlah anak"/>
+            </listhead>
+            <template  name="model">
+                <listitem>
+                    <listcell label="${each.id}"/>
+                    <listcell label="${each.username}"/>
+                    <listcell label="${each.gender}"/>
+                    <listcell label="${each.birthday}"/>
+                    <listcell label="${each.status}"/>
+                    <listcell label="${each.anak}"/>
+                </listitem>
+            </template>
+
+        </listbox>
+
+    </window>
+</zk>

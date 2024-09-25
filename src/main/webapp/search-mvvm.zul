@@ -1,0 +1,90 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="template.zul"?>
+<zk>
+    <style>
+        .small-list-item {
+        height: 5px;
+        line-height: 25px;
+        }
+    </style>
+    <window title="User List" border="normal" width="100%"
+            onOK="@command('search')"
+            viewModel="@id('vm') @init('data.SearchViewModel')"
+            self="@define(content)" >
+        Search Username:
+        <textbox value="@save(vm.keyword)"  />
+        <button label="Search"
+                onClick="@command('search')"
+                iconSclass="z-icon-search"
+                style="margin= 0 0 5px;background-color: #161b33;"/>
+        <listbox model="@init(vm.userList)" emptyMessage="No User Found"
+                 rows="3" selectedItem="@save(vm.selectedUser)" style="background-color: #161b33;">
+            <listhead style="background-color: #161b33; margin:0; padding:0;">
+                <listheader label="username" style="background-color: #161b33;"/>
+                <listheader label="gender" style="background-color: #161b33;"/>
+                <listheader label="birthday date" style="background-color: #161b33;"/>
+                <listheader label="status" style="background-color: #161b33;"/>
+                <listheader label="jumlah anak" style="background-color: #161b33;"/>
+            </listhead>
+
+            <template  name="model">
+                <listitem class="small-list-item">
+                    <listcell label="@init(each.username)"/>
+                    <listcell label="@init(each.gender)"/>
+                    <listcell label="@init(each.birthday)"/>
+                    <listcell label="@init(each.status)"/>
+                    <listcell label="@init(each.anak)"/>
+                </listitem>
+            </template>
+        </listbox>
+
+            <hlayout>
+                <button label="update"
+                        iconSclass="z-icon-arrow-up"
+                        onClick="@command('update')"
+                        style="background-color: #161b33;"/>
+                <button label="Delete"
+                        onClick="@command('delete')"
+                        iconSclass="z-icon-trash-o"
+                        style="margin= 0 0 5px;background-color:red"/>
+            </hlayout>
+
+
+        <grid>
+            <columns>
+                <column label="user details" style="text-align=center;background-color: #161b33;"/>
+            </columns>
+            <rows>
+                <row>
+                    <label value="ID:"/>
+                    <label value="@bind(vm.selectedUser.id)"/>
+                    <label value="Username:"/>
+                    <textbox value="@bind(vm.selectedUser.username)"/>
+                </row>
+                <row>
+                    <label value="Gender:"/>
+                    <vlayout>
+                        <radiogroup id="gender" selectedItem="@bind(vm.selectedUser.gender)">
+                            <radio value="male" iconSclass="z-icon-male"/>Male
+                            <radio value="female" iconSclass="z-icon-female"/>Female
+                        </radiogroup>
+                    </vlayout>
+                    <label value="Birthday:"/>
+                    <datebox value="@bind(vm.selectedUser.birthday)"/>
+                </row>
+                <row>
+                    <label value="Status:"/>
+                    <combobox value="@bind(vm.selectedUser.status)" selectedItem="@bind(vm.selectedUser.status)">
+                        <comboitem label="Married" value="Married"/>
+                        <comboitem label="Widowed" value="Widow"/>
+                        <comboitem label="Single" value="Single"/>
+                        <comboitem label="Divorced" value="Divorced"/>
+                    </combobox>
+                    <label value="Jumlah Anak:"/>
+                    <spinner value="@bind(vm.selectedUser.anak)"/>
+                </row>
+            </rows>
+        </grid>
+
+
+    </window>
+</zk>
