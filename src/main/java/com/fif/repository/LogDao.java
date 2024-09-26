@@ -1,4 +1,4 @@
-package com.fif.services.impl;
+package com.fif.repository;
 
 import com.fif.entity.Log;
 import java.util.List;

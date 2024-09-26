@@ -1,0 +1,1 @@
+INSERT INTO USER VALUES(30,3,'2024-09-25 00:00:00.000000','female','Widow','tasya5')

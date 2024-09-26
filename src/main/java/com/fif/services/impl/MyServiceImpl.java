@@ -1,6 +1,7 @@
 package com.fif.services.impl;
 
 import com.fif.entity.Log;
+import com.fif.repository.LogDao;
 import com.fif.services.MyService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class MyServiceImpl implements MyService {
 
 	@Autowired
-	LogDao dao;
+    LogDao dao;
 
 	public Log addLog(Log log) {
 		return dao.save(log);
@@ -26,6 +27,4 @@ public class MyServiceImpl implements MyService {
 	public void deleteLog(Log log) {
 		dao.delete(log);
 	}
-
-
 }

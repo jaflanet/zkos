@@ -80,6 +80,8 @@
         <button label="Search MVVM" href="/search-mvvm.zul"  class="button-style"/>
     </hlayout>
 
+    <button href="/logout" label="logout" style="background-color:red;margin-top:10px"/>
+
 </div>
 
 
